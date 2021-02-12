@@ -1,0 +1,66 @@
+﻿@model IEnumerable<StefanBrunotteWebPage.Models.AcademicViewModel>
+
+@{
+    ViewData["Title"] = "Academic List";
+}
+<h4>Search Result from "Description"</h4>
+<hr />
+<div class="mb-2">
+    <a class="myBtnBack" asp-action="Index">Back to List</a>
+</div>
+
+<table class="table">
+    <thead class="tHeader">
+        <tr>
+            <th class="thOne">
+                @Html.DisplayNameFor(model => model.UniversityName)
+            </th>
+            <th class="thTwo">
+                @Html.DisplayNameFor(model => model.CourseName)
+            </th>
+            <th class="thThree">
+                @Html.DisplayNameFor(model => model.CourseCoversDescription)
+            </th>
+            <th class="thFour">
+                @Html.DisplayNameFor(model => model.ExperienceGainedDescription)
+            </th>
+            <th class="thFive">
+                @Html.DisplayNameFor(model => model.CourseStartDate)
+            </th>
+            <th class="thSix">
+                @Html.DisplayNameFor(model => model.CourseEndDate)
+            </th>
+            <th class="gridHeaderSeven"></th>
+        </tr>
+    </thead>
+    <tbody class="tHeader">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="tdOne">
+                    @Html.DisplayFor(modelItem => item.UniversityName)
+                </td>
+                <td class="tdTwo">
+                    @Html.DisplayFor(modelItem => item.CourseName)
+                </td>
+                <td class="tdThree">
+                    @Html.DisplayFor(modelItem => item.CourseCoversDescription)
+                </td>
+                <td class="tdFour">
+                    @Html.DisplayFor(modelItem => item.ExperienceGainedDescription)
+                </td>
+                <td class="tdFive">
+                    @Html.DisplayFor(modelItem => item.CourseStartDate)
+                </td>
+                <td class="tdSix">
+                    @Html.DisplayFor(modelItem => item.CourseEndDate)
+                </td>
+                <td class="tdSeven">
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

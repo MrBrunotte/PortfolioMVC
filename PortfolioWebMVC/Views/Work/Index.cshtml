@@ -1,0 +1,71 @@
+﻿@model IEnumerable<StefanBrunotteWebPage.Models.WorkViewModel>
+
+@{
+    ViewData["Title"] = "Workd List";
+}
+<div class="partialViewGrid">
+    <h1 class="gridIndexH1">Work Experience</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <form class="form-inline" asp-action="ShowSearchResults">
+                <div class="form-group mx-sm-6 mr-2 mb-2">
+                    <label for="SearchPhrase" class="control-label"></label>
+                    <input name="SearchPhrase" class="form-control placeHolderText" placeholder="Search description keywords..." />
+                </div>
+                <div class="form-group mb-2">
+                    <input type="submit" value="Search" class="myBtnSearch" />
+                    <a class="myBtnAdd ml-2" asp-action="Create">Add New Course</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <table class="table">
+        <thead class="tHeader">
+            <tr>
+                <th class="thOne">
+                    @Html.DisplayNameFor(model => model.CompanyName)
+                </th>
+                <th class="thTwo">
+                    @Html.DisplayNameFor(model => model.WorkDescription)
+                </th>
+                <th class="thThree">
+                    @Html.DisplayNameFor(model => model.WorkExperienceGainedDescription)
+                </th>
+                <th class="thFour">
+                    @Html.DisplayNameFor(model => model.WorkStartDate)
+                </th>
+                <th class="thFive">
+                    @Html.DisplayNameFor(model => model.WorkEndDate)
+                </th>
+                <th class="gridHeaderSix"></th>
+            </tr>
+        </thead>
+        <tbody class="tHeader">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="tdOne">
+                        @Html.DisplayFor(modelItem => item.CompanyName)
+                    </td>
+                    <td class="tdTwo">
+                        @Html.DisplayFor(modelItem => item.WorkDescription)
+                    </td>
+                    <td class="tdThree">
+                        @Html.DisplayFor(modelItem => item.WorkExperienceGainedDescription)
+                    </td>
+                    <td class="tdFour">
+                        @Html.DisplayFor(modelItem => item.WorkStartDate)
+                    </td>
+                    <td class="tdfive">
+                        @Html.DisplayFor(modelItem => item.WorkEndDate)
+                    </td>
+                    <td class="tdSix">
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,237 @@
+﻿/******** Elements ********/
+body {
+    background-image: url(/img/anonymous.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+/******** Navbar Settings ********/
+nav {
+    display: flex;
+    justify-content: end;
+    padding: 0 70px;
+    align-items: center;
+    min-height: 4vh;
+    background: #00293f;
+    font-family: 'Montserrat Subrayada', sans-serif;
+}
+.border-bottom {
+    border-bottom: 1px solid #00293f !important;
+}
+
+.navbar-brand {
+    font-family: 'Montserrat Subrayada', 'Architects Daughter', cursive, sans-serif;
+    color: white;
+}
+.navbar-brand:hover {
+    font-weight: 700;
+    color: antiquewhite;
+}
+.myNavLink {
+    font-size: 0.8rem;
+}
+.nav-item {
+    padding: 0 1rem;
+}
+
+.nav-item a {
+    color: whitesmoke;
+    text-decoration: none;
+    letter-spacing: 2.5px;
+    font-size: 10px;
+    text-transform: capitalize;
+}
+.nav-item a:hover {
+    font-weight: 700;
+    color: antiquewhite;
+}
+/******** My Button *********/
+.myBtnSearch {
+    width: 90px;
+    padding: 0 14px;
+}
+.myBtnAdd {
+    width: 150px;
+    padding: 3px 14px;
+    margin-left: 40px !important;
+}
+.myBtnBack {
+    width: 150px;
+    padding: 3px 14px;
+}
+.myBtnSearch,
+.myBtnAdd,
+.myBtnBack {
+    height: 30px;
+    text-decoration: none !important;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: lightgray;
+    background-color: #fde5a9;
+}
+.myBtnSearch:hover,
+.myBtnAdd:hover,
+.myBtnBack:hover {
+    color: black;
+}
+/******** Search Setup *********/
+.placeHolderText {
+    font-style: italic !important;
+    color: #6c757d38 !important;
+}
+/******** Table & Form Setup *********/
+.table {
+    width: 60%;
+}
+dt,
+dd {
+    width: 800px;
+}
+.detailsBox {
+    width: 60%;
+}
+.descriptionBox {
+    height: 150px;
+}
+
+.form-control {
+    background-color: #00293f;
+    border: 1px solid #00293f;
+    height: 30px;
+}
+/******** Grid Section for Home & About me *********/
+.gridSection {
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, auto);
+}
+/******** Home View *********/
+.gallaryContainer {
+    width: 900px;
+    height: 300px;
+}
+.gallaryGrid {
+    width: 100%;
+    display: grid;
+    grid-auto-flow: dense;
+    grid-template: "1fr 1fr 1fr 1fr 1fr" 15vh "1fr 1fr 1fr 1fr 1fr" 15vh "1fr 1fr 1fr 1fr 1fr" 15vh;
+}
+.gallaryGrid .box {
+    position: relative;
+    background: #ccc;
+} 
+.gallaryGrid .box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.gallaryGrid .box.a {
+    grid-row: span 2;
+}
+.gallaryGrid .box.b,
+.gallaryGrid .box.j {
+    grid-column: span 2;
+}
+.gallaryGrid .box.f,
+.gallaryGrid .box.h {
+    grid-column: span 3;
+}
+/******** Contact *******/
+.myContainer {
+    margin-right: 35%;
+    margin-left: 3%;
+}
+.contactCenterIcons {
+    text-align: center;
+    margin: 90px 0 0;
+}
+.social_link:hover,
+.email_anchor:hover {
+    transform: translateY(-5px);
+}
+.contact_email_img {
+    content: url(/img/email150x150.png);
+}
+.contact_email_img:hover {
+    content: url(/img/email_open_white170.png);
+}
+.contact_img_github,
+.contact_img_linkedin,
+.contact_img_twitter {
+    width: 50px;
+    margin: 25px 25px 0px;
+    padding-bottom: 10px;
+}
+
+.contact_img_github:hover,
+.contact_img_linkedin:hover,
+.contact_img_twitter:hover {
+    border-bottom: 2px solid whitesmoke;
+    transform: translateY(-5px);
+}
+
+/******** Footer ********/
+.footer {
+    text-align: right;
+    color: #d81921;
+    font-family: 'Montserrat Subrayada', sans-serif;
+}
+.footer-link {
+    margin-right: 7%;
+    color: #d81921;
+    text-decoration: none;
+}
+.footer a:hover {
+    color: #d81921;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/******** Media Queries *******/
+
+@media (max-width: 991px)
+{
+    .gallaryGrid {
+        width: 100%;
+        display: grid;
+        grid-auto-flow: dense;
+        grid-template: "1fr 1fr 1fr" 250px 
+                       "1fr 1fr 1fr" 250px 
+                       "1fr 1fr 1fr" 250px 
+                       "1fr 1fr 1fr" 250px 
+                       "1fr 1fr 1fr" 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallaryGrid {
+        width: 100%;
+        display: grid;
+        grid-auto-flow: dense;
+        grid-template: "1fr 1fr" 200px 
+                       "1fr 1fr" 200px 
+                       "1fr 1fr" 200px 
+                       "1fr 1fr" 200px 
+                       "1fr 1fr" 200px 
+                       "1fr 1fr" 200px 
+                       "1fr 1fr" 200px;
+    }
+        .gallaryGrid .box.h {
+            grid-column: span 1;
+        }
+}
