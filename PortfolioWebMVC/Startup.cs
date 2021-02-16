@@ -32,7 +32,7 @@ namespace PortfolioWebMVC
             //        Configuration.GetConnectionString("DefaultConnection")));
             //var connectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<ApplicationDbContext>(options =>
-        options.UseSqlServer(Configuration.GetConnectionString("ApplicationDbContext")));
+        options.UseSqlServer(Configuration.GetConnectionString("SqlConnections")));
 
             services.AddDatabaseDeveloperPageExceptionFilter();
 

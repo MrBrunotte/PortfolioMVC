@@ -50,19 +50,19 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>
+                    <td class="tdSix">
                         @Html.DisplayFor(modelItem => item.ProjectName)
                     </td>
-                    <td>
+                    <td class="tdOne">
                         @Html.DisplayFor(modelItem => item.ProjectDescription)
                     </td>
-                    <td>
+                    <td class="tdOne">
                         @Html.DisplayFor(modelItem => item.FrameworkToolsDescription)
                     </td>
-                    <td target="blank">
+                    <td class="tdFive">
                         @Html.DisplayFor(modelItem => item.GitHubLink)
-                    </td target="blank">
-                    <td target="blank">
+                    </td>
+                    <td class="tdSix">
                         @Html.DisplayFor(modelItem => item.DeployedLink)
                     </td>
                     <td>

@@ -147,7 +147,9 @@ th {
     font-family: 'Montserrat Subrayada', sans-serif;
 }
 .thFive,
-.thSix {
+.tdFive,
+.thSix,
+.tdSix {
     width: 170px;
 }
 .tdDetails {

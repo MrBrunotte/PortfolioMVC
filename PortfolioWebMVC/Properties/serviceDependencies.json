@@ -3,6 +3,10 @@
     "mssql2": {
       "type": "mssql",
       "connectionId": "ApplicationDbContext"
+    },
+    "secrets1": {
+      "type": "secrets",
+      "connectionId": "VaultUri"
     }
   }
 }
