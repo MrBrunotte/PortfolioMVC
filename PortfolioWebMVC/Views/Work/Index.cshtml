@@ -1,4 +1,7 @@
-﻿@model IEnumerable<StefanBrunotteWebPage.Models.WorkViewModel>
+﻿@using Microsoft.AspNetCore.Identity
+@model IEnumerable<StefanBrunotteWebPage.Models.WorkViewModel>
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
 
 @{
     ViewData["Title"] = "Work List";
@@ -14,7 +17,10 @@
                 </div>
                 <div class="form-group mb-2">
                     <input type="submit" value="Search" class="myBtnSearch" />
-                    <a class="myBtnAdd ml-2" asp-action="Create">Add New Course</a>
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <a class="myBtnAdd ml-2" asp-action="Create">Add New Work</a>
+                    }
                 </div>
             </form>
         </div>
@@ -37,7 +43,7 @@
                 <th class="thFive">
                     @Html.DisplayNameFor(model => model.WorkEndDate)
                 </th>
-                <th class="gridHeaderSix"></th>
+                <th class="gridHeaderSix">Details</th>
             </tr>
         </thead>
         <tbody class="tHeader">
@@ -60,9 +66,16 @@
                         @Html.DisplayFor(modelItem => item.WorkEndDate)
                     </td>
                     <td class="tdSix">
-                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            <a class="tdDetails" asp-action="Details" asp-route-id="@item.Id">View</a>
+                            <a class="tdDetails" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                            <a class="tdDetails" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        }
+                        else
+                        {
+                            <a class="tdDetails" asp-action="Details" asp-route-id="@item.Id">View</a>
+                        }
                     </td>
                 </tr>
             }

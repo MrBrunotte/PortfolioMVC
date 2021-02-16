@@ -127,6 +127,12 @@ dd {
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(12, auto);
 }
+.tdDetails {
+    font-weight: 700;
+}
+.tdDetails:hover {
+    color: #fde5a9;
+}
 /******** Home View *********/
 .gallaryContainer {
     width: 900px;
@@ -162,13 +168,22 @@ dd {
     grid-column: span 3;
 }
 /******** Contact *******/
-.myContainer {
-    margin-right: 35%;
-    margin-left: 3%;
+.myContactContainer {
+    text-align: center;
+    margin: 200px auto;
+    font-family: 'Montserrat Subrayada', 'Architects Daughter', cursive, sans-serif;
 }
 .contactCenterIcons {
     text-align: center;
     margin: 90px 0 0;
+}
+.contactHeader {
+    font-size: 4.5rem;
+}
+.smallText {
+    font-weight: 700;
+    font-style: italic;
+    font-size: .85rem;
 }
 .social_link:hover,
 .email_anchor:hover {
