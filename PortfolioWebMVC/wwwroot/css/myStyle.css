@@ -53,18 +53,18 @@ nav {
     padding: 0 1rem;
 }
 
-    .nav-item a {
-        color: whitesmoke;
-        text-decoration: none;
-        letter-spacing: 2.5px;
-        font-size: 10px;
-        text-transform: capitalize;
-    }
+.nav-item a {
+    color: whitesmoke;
+    text-decoration: none;
+    letter-spacing: 2.5px;
+    font-size: 10px;
+    text-transform: capitalize;
+}
 
-        .nav-item a:hover {
-            font-weight: 700;
-            color: antiquewhite;
-        }
+.nav-item a:hover {
+    font-weight: 700;
+    color: antiquewhite;
+}
 /******** My Button *********/
 .myBtnSearch {
     width: 90px;
@@ -96,11 +96,11 @@ nav {
     background-color: #fde5a9;
 }
 
-    .myBtnSearch:hover,
-    .myBtnAdd:hover,
-    .myBtnBack:hover {
-        color: black;
-    }
+.myBtnSearch:hover,
+.myBtnAdd:hover,
+.myBtnBack:hover {
+    color: black;
+}
 /******** Search Setup *********/
 .placeHolderText {
     font-style: italic !important;
@@ -143,54 +143,22 @@ dd {
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(12, auto);
 }
-
+th {
+    font-family: 'Montserrat Subrayada', sans-serif;
+}
+.thFive,
+.thSix {
+    width: 170px;
+}
 .tdDetails {
     font-weight: 700;
 }
 
-    .tdDetails:hover {
-        color: #fde5a9;
-    }
+.tdDetails:hover {
+    color: #fde5a9;
+}
 /******** Home View *********/
-.gallaryContainer {
-    width: 900px;
-    height: 300px;
-}
 
-.gallaryGrid {
-    width: 100%;
-    display: grid;
-    grid-auto-flow: dense;
-    grid-template: "1fr 1fr 1fr 1fr 1fr" 15vh "1fr 1fr 1fr 1fr 1fr" 15vh "1fr 1fr 1fr 1fr 1fr" 15vh;
-}
-
-.gallaryGrid .box {
-    position: relative;
-    background: #ccc;
-}
-
-.gallaryGrid .box img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.gallaryGrid .box.a {
-    grid-row: span 2;
-}
-
-.gallaryGrid .box.b,
-.gallaryGrid .box.j {
-    grid-column: span 2;
-}
-
-.gallaryGrid .box.f,
-.gallaryGrid .box.h {
-    grid-column: span 3;
-}
 
 
 /******** Meet Me *******/

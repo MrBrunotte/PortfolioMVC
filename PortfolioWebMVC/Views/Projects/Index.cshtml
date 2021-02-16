@@ -28,19 +28,19 @@
     <table class="table">
         <thead>
             <tr>
-                <th>
+                <th class="thSix">
                     @Html.DisplayNameFor(model => model.ProjectName)
                 </th>
-                <th>
+                <th class="thOne">
                     @Html.DisplayNameFor(model => model.ProjectDescription)
                 </th>
-                <th>
+                <th class="thOne">
                     @Html.DisplayNameFor(model => model.FrameworkToolsDescription)
                 </th>
-                <th>
+                <th class="thFive">
                     @Html.DisplayNameFor(model => model.GitHubLink)
                 </th>
-                <th>
+                <th class="thSix">
                     @Html.DisplayNameFor(model => model.DeployedLink)
                 </th>
                 <th>Details</th>
@@ -59,10 +59,10 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.FrameworkToolsDescription)
                     </td>
-                    <td>
+                    <td target="blank">
                         @Html.DisplayFor(modelItem => item.GitHubLink)
-                    </td>
-                    <td>
+                    </td target="blank">
+                    <td target="blank">
                         @Html.DisplayFor(modelItem => item.DeployedLink)
                     </td>
                     <td>
