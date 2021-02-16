@@ -14,8 +14,8 @@ namespace PortfolioWebMVC.Data
             : base(options)
         {
         }
-        public DbSet<StefanBrunotteWebPage.Models.AcademicViewModel> AcademicViewModel { get; set; }
-        public DbSet<StefanBrunotteWebPage.Models.WorkViewModel> WorkViewModel { get; set; }
-        public DbSet<PortfolioWebMVC.Models.ProjectsViewModel> ProjectsViewModel { get; set; }
+        public DbSet<AcademicViewModel> AcademicViewModel { get; set; }
+        public DbSet<WorkViewModel> WorkViewModel { get; set; }
+        public DbSet<ProjectsViewModel> ProjectsViewModel { get; set; }
     }
 }

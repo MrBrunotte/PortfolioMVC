@@ -21,7 +21,7 @@
     },
     "resourceName": {
       "type": "string",
-      "defaultValue": "StefanBrunotte",
+      "defaultValue": "stefanbrunotte",
       "metadata": {
         "description": "Name of the main resource to be created by this template."
       }

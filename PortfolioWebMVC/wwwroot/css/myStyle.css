@@ -1,8 +1,9 @@
 ﻿/******** Elements ********/
 body {
-    background-image: url(/img/anonymous.jpg);
+    /*background-image: url(/img/anonymous.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;*/
+    background-color: #71969f;
 }
 a {
     text-decoration: none;
@@ -12,7 +13,10 @@ a:hover {
     text-decoration: none;
     color: black;
 }
-
+main {
+    width: 90%;
+    margin: 0 auto;
+}
 /******** Navbar Settings ********/
 nav {
     display: flex;
@@ -88,11 +92,16 @@ nav {
 /******** Search Setup *********/
 .placeHolderText {
     font-style: italic !important;
-    color: #6c757d38 !important;
+    color: white !important;
+}
+.form-control::placeholder {
+    color: #00293f;
+    opacity: 1;
 }
 /******** Table & Form Setup *********/
 .table {
-    width: 60%;
+    width: 100%;
+    margin: 0 auto;
 }
 dt,
 dd {
@@ -106,10 +115,11 @@ dd {
 }
 
 .form-control {
-    background-color: #00293f;
+    background-color: #fde5a9;
     border: 1px solid #00293f;
     height: 30px;
 }
+
 /******** Grid Section for Home & About me *********/
 .gridSection {
     display: grid;
@@ -186,18 +196,22 @@ dd {
 }
 
 /******** Footer ********/
+.footer,
+.footer-link {
+    color: #00293f;
+}
+
 .footer {
     text-align: right;
-    color: #d81921;
+    
     font-family: 'Montserrat Subrayada', sans-serif;
 }
 .footer-link {
     margin-right: 7%;
-    color: #d81921;
     text-decoration: none;
 }
 .footer a:hover {
-    color: #d81921;
+    color: #fde5a9;
     font-weight: 700;
     text-decoration: none;
 }

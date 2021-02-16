@@ -1,3 +1,16 @@
 {
-  "dependencies": {}
+  "dependencies": {
+    "mssql2": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/portfoliodbdbserver/databases/aspnet-PortfolioWebMVC",
+      "type": "mssql.azure",
+      "connectionId": "PortfolioASPDB",
+      "secretStore": "AzureAppSettings"
+    },
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "ApplicationDbContext",
+      "suggestion": "true",
+      "ignored": "true"
+    }
+  }
 }
