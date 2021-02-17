@@ -159,12 +159,17 @@ th {
 .tdDetails:hover {
     color: #fde5a9;
 }
+
 /******** Home View *********/
-
-
-
+.homeHeader {
+    font-family: 'Montserrat Subrayada', sans-serif;
+    text-align: center;
+}
+.homeText {
+    text-align: center;
+}
 /******** Meet Me *******/
-.MeetMeContainer {
+.meetMeContainer {
     display: grid;
     grid-gap: 0;
     grid-template-columns: repeat(12, 1fr);
@@ -178,13 +183,13 @@ th {
     height: 85vh;
 }
 .imgViggo {
-    height: 200px;
+    height: 150px;
     margin: 0 auto;
     border-radius: 10px;
     grid-column: 9/-1;
     grid-row: 8/-1;
 }
-.MeetMeHeader,
+.meetMeHeader,
 .professionalHeader,
 .privateHeader,
 .qualitiesHeader {
@@ -192,15 +197,20 @@ th {
     text-align: center;
 }
 
-.MeetMeHeader {
+.meetMeHeader {
     grid-column: 5/-1;
     grid-row: 1/1;
-    padding: 25px;
 }
-
+.meetMeSmallHeader {
+    grid-column: 6/-2;
+    grid-row: 2/3;
+    padding: 0 15px 15px;
+    text-align: center;
+    font-weight: 700;
+}
 .infoText {
     grid-column: 6/-2;
-    grid-row: 2/4;
+    grid-row: 3/4;
     padding: 0 15px 15px;
 }
 
