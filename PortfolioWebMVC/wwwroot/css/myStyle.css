@@ -74,7 +74,7 @@ nav {
 .myBtnAdd {
     width: 150px;
     padding: 3px 14px;
-    margin-left: 40px !important;
+    /*margin-left: 40px !important;*/
 }
 
 .myBtnBack {
@@ -84,7 +84,9 @@ nav {
 
 .myBtnSearch,
 .myBtnAdd,
-.myBtnBack {
+.myBtnBack,
+.myBtnSave,
+.myBtnDelete {
     height: 30px;
     text-decoration: none !important;
     font-size: 0.9rem;
@@ -95,12 +97,22 @@ nav {
     background-color: lightgray;
     background-color: #fde5a9;
 }
-
-.myBtnSearch:hover,
-.myBtnAdd:hover,
-.myBtnBack:hover {
-    color: black;
+.myBtnSave {
+    background-color: green;
+    color: white;
 }
+.myBtnDelete {
+    background-color: red;
+    color: white;
+}
+    .myBtnSearch:hover,
+    .myBtnAdd:hover,
+    .myBtnBack:hover,
+    .myBtnSave:hover,
+    .myBtnDelete:hover {
+        color: #fde5a9;
+        background-color: black;
+    }
 /******** Search Setup *********/
 .placeHolderText {
     font-style: italic !important;
@@ -112,6 +124,28 @@ nav {
     opacity: 1;
 }
 /******** Table & Form Setup *********/
+.boxName {
+min-width: 162px;
+
+}
+.boxDescription {
+    min-width: 390px;
+}
+.boxTools {
+    min-width: 240px;
+}
+.boxGitHub,
+.boxLinkedIn,
+.boxWebLink {
+    min-width: 158px;
+    max-width: 160px;
+    overflow: auto;
+    cursor: pointer;
+    text-align: center;
+}
+.boxDetails {
+    min-width: 100px;
+}
 .table {
     width: 100%;
     margin: 0 auto;
@@ -152,9 +186,7 @@ th {
 .tdSix {
     width: 170px;
 }
-.tdDetails {
-    font-weight: 700;
-}
+
 
 .tdDetails:hover {
     color: #fde5a9;

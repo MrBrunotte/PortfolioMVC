@@ -7,7 +7,7 @@
     ViewData["Title"] = "Projects List";
 }
 <div class="partialViewGrid">
-    <h1 class="gridIndexH1">Academic Qualifications</h1>
+    <h1 class="gridIndexH1">List of Projects</h1>
     <div class="row">
         <div class="col-md-6">
             <form class="form-inline" asp-action="ShowSearchResults">
@@ -28,19 +28,19 @@
     <table class="table">
         <thead>
             <tr>
-                <th class="thSix">
+                <th class="thSix boxName">
                     @Html.DisplayNameFor(model => model.ProjectName)
                 </th>
-                <th class="thOne">
+                <th class="thOne boxDescription">
                     @Html.DisplayNameFor(model => model.ProjectDescription)
                 </th>
-                <th class="thOne">
+                <th class="thOne boxTools">
                     @Html.DisplayNameFor(model => model.FrameworkToolsDescription)
                 </th>
-                <th class="thFive">
+                <th class="thFive boxGH">
                     @Html.DisplayNameFor(model => model.GitHubLink)
                 </th>
-                <th class="thSix">
+                <th class="thSix boxWebLink">
                     @Html.DisplayNameFor(model => model.DeployedLink)
                 </th>
                 <th>Details</th>
@@ -50,31 +50,36 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    <td class="tdSix">
+                    <td class="tdSix boxName">
                         @Html.DisplayFor(modelItem => item.ProjectName)
                     </td>
-                    <td class="tdOne">
+                    <td class="tdOne boxDescription">
                         @Html.DisplayFor(modelItem => item.ProjectDescription)
                     </td>
-                    <td class="tdOne">
+                    <td class="tdOne boxTools">
                         @Html.DisplayFor(modelItem => item.FrameworkToolsDescription)
                     </td>
-                    <td class="tdFive">
-                        @Html.DisplayFor(modelItem => item.GitHubLink)
+                    <td class="tdFive boxGitHub">
+                        <a class="" href=@Html.DisplayFor(modelItem => item.GitHubLink) target="blank" aria-label="GitHub link">
+                            <img class="linkIcon" src="/img/github24.png" alt="GitHub link">
+                        </a>
                     </td>
-                    <td class="tdSix">
-                        @Html.DisplayFor(modelItem => item.DeployedLink)
+                    <td class="tdSix boxWebLink">
+                        <a class="" href=@Html.DisplayFor(modelItem => item.DeployedLink) target="blank" aria-label="Project link">
+                            <img class="linkIcon" src="/img/external_link24.png" alt="Project link">
+                        </a>
                     </td>
-                    <td>
+
+                    <td class="boxDetails">
                         @if (SignInManager.IsSignedIn(User))
                         {
-                            <a class="tdDetails" asp-action="Details" asp-route-id="@item.Id">View</a>
-                            <a class="tdDetails" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                            <a class="tdDetails" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                            <a class="tdDetails aView aViewEditDel" asp-action="Details" asp-route-id="@item.Id">View</a>
+                            <a class="tdDetails aEdit aViewEditDel" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                            <a class="tdDetails aDel aViewEditDel" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                         }
                         else
                         {
-                            <a class="tdDetails" asp-action="Details" asp-route-id="@item.Id">View</a>
+                            <a class="tdDetails aView aViewEditDel" asp-action="Details" asp-route-id="@item.Id">View</a>
                         }
                     </td>
                 </tr>
