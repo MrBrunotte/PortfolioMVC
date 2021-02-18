@@ -116,7 +116,7 @@ nav {
 /******** Search Setup *********/
 .placeHolderText {
     font-style: italic !important;
-    color: white !important;
+    color: #00293f !important;
 }
 
 .form-control::placeholder {
