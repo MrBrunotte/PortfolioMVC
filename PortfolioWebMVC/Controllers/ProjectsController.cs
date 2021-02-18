@@ -33,7 +33,7 @@ namespace PortfolioWebMVC.Controllers
         }
 
         // GET: Projects/ShowSearchForm
-        public async Task<IActionResult> ShowSearchForm()
+        public IActionResult ShowSearchForm()
         {
             return View();
         }
