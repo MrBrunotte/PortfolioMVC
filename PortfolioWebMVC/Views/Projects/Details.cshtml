@@ -31,14 +31,20 @@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.GitHubLink)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.GitHubLink)
+        <dd class="col-sm-10">
+            <a class="" href=@Html.DisplayFor(model => model.GitHubLink) target="blank" aria-label="GitHub link">
+                <img class="linkIcon" src="/img/github24.png" alt="GitHub link">
+            </a> ||
+            (@Html.DisplayFor(model => model.GitHubLink))
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.DeployedLink)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DeployedLink)
+        <dd class="col-sm-10">
+            <a class="" href=@Html.DisplayFor(model => model.DeployedLink) target="blank" aria-label="Project link">
+                <img class="linkIcon" src="/img/external_link24.png" alt="Project link">
+            </a> ||
+            (@Html.DisplayFor(model => model.DeployedLink))
         </dd>
     </dl>
     <a class="myBtnAdd" asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
