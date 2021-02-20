@@ -6,81 +6,73 @@
 @{
     ViewData["Title"] = "Work List";
 }
-<div class="partialViewGrid">
-    <h1 class="gridIndexH1">Work Experience</h1>
-    <div class="row">
-        <div class="col-md-6">
-            <form class="form-inline" asp-action="ShowSearchResults">
-                <div class="form-group mx-sm-6 mr-2 mb-2">
-                    <label for="SearchPhrase" class="control-label"></label>
-                    <input name="SearchPhrase" class="form-control placeHolderText" placeholder="Search description keywords..." />
-                </div>
-                <div class="form-group mb-2">
-                    <input type="submit" value="Search" class="myBtnSearch" />
-                    @if (SignInManager.IsSignedIn(User))
-                    {
-                        <a class="myBtnAdd ml-2" asp-action="Create">Add New Work</a>
-                    }
-                </div>
-            </form>
+<div class="listGrid">
+    <h1 class="listH1">Work Experience</h1>
+    <form class="form-inline formGrid" asp-action="ShowSearchResults">
+        <div class="form-group SearchInputField">
+            <label for="SearchPhrase" class="control-label"></label>
+            <input name="SearchPhrase" class="form-control placeHolderText" placeholder="Search description keywords..." />
         </div>
-    </div>
-
-    
-    <table class="table">
-        <thead class="tHeader">
-            <tr>
-                <th class="thOne">
-                    @Html.DisplayNameFor(model => model.CompanyName)
-                </th>
-                <th class="thTwo">
-                    @Html.DisplayNameFor(model => model.WorkDescription)
-                </th>
-                <th class="thThree">
-                    @Html.DisplayNameFor(model => model.WorkExperienceGainedDescription)
-                </th>
-                <th class="thFive">
-                    @Html.DisplayNameFor(model => model.WorkStartDate)
-                </th>
-                <th class="thSix">
-                    @Html.DisplayNameFor(model => model.WorkEndDate)
-                </th>
-                <th class="gridHeaderSix">Details</th>
-            </tr>
-        </thead>
-        <tbody class="tHeader">
+        <div class="form-group searchInputBtn">
+            <input type="submit" value="Search" class="myBtnSearch" />
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <a class="myBtnAdd createListBtn" asp-action="Create">Add New Work</a>
+            }
+        </div>
+    </form>
+    <div id="divTableTwo">
+        <div id="headerTableTwo">
+            <div class="divHLi cellWidthOne listHeaderName">
+                @Html.DisplayNameFor(model => model.CompanyName)
+            </div>
+            <div class="divHLi cellWidthTwo listHeaderDescription">
+                @Html.DisplayNameFor(model => model.WorkDescription)
+            </div>
+            <div class="divHLi cellWidthThree listHeaderExp">
+                @Html.DisplayNameFor(model => model.WorkExperienceGainedDescription)
+            </div>
+            <div class="divHLi cellWidthFour listHeaderStartTwo">
+                @Html.DisplayNameFor(model => model.WorkStartDate)
+            </div>
+            <div class="divHLi cellWidthFour listHeaderEndTwo">
+                @Html.DisplayNameFor(model => model.WorkEndDate)
+            </div>
+            <div class="divHLi cellWidthFour listHeaderDetailsTwo">
+                Details
+            </div>
+        </div>
+        <div id="bodyTableTwo">
             @foreach (var item in Model)
             {
-                <tr>
-                    <td class="tdOne">
-                        @Html.DisplayFor(modelItem => item.CompanyName)
-                    </td>
-                    <td class="tdTwo">
-                        @Html.DisplayFor(modelItem => item.WorkDescription)
-                    </td>
-                    <td class="tdThree">
-                        @Html.DisplayFor(modelItem => item.WorkExperienceGainedDescription)
-                    </td>
-                    <td class="tdFour">
-                        @Html.DisplayFor(modelItem => item.WorkStartDate)
-                    </td>
-                    <td class="tdfive">
-                        @Html.DisplayFor(modelItem => item.WorkEndDate)
-                    </td>
-                    <td class="tdSix">
-                        @if (SignInManager.IsSignedIn(User))
-                        {
-                            <a class="tdDetails" asp-action="Details" asp-route-id="@item.Id">View</a>
-                            <a class="tdDetails" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                            <a class="tdDetails" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                        }
-                        else
-                        {
-                            <a class="tdDetails" asp-action="Details" asp-route-id="@item.Id">View</a>
-                        }
-                    </td>
-                </tr>
+                <div class="divCLi cellWidthOne">
+                    @Html.DisplayFor(modelItem => item.CompanyName)
+                </div>
+                <div class="divCLi cellWidthTwo">
+                    @Html.DisplayFor(modelItem => item.WorkDescription)
+                </div>
+                <div class="divCLi cellWidthThree">
+                    @Html.DisplayFor(modelItem => item.WorkExperienceGainedDescription)
+                </div>
+                <div class="divCLi cellWidthFour">
+                    @Html.DisplayFor(modelItem => item.WorkStartDate)
+                </div>
+                <div class="divCLi cellWidthFour">
+                    @Html.DisplayFor(modelItem => item.WorkEndDate)
+                </div>
+                <div class="divCLi cellWidthFour">
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <a class="tdDetails" asp-action="Details" asp-route-id="@item.Id">View</a>
+                        <a class="tdDetails" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                        <a class="tdDetails" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    }
+                    else
+                    {
+                        <a class="tdDetails" asp-action="Details" asp-route-id="@item.Id">View</a>
+                    }
+                </div>
             }
-        </tbody>
-    </table>
+        </div>
+    </div>
 </div>

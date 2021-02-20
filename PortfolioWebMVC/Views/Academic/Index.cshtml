@@ -23,7 +23,7 @@
             </form>
     <div id="divTable">
         <div id="headerTable">
-            <div class="divHLi cellWidthOne listHeaderUni">
+            <div class="divHLi cellWidthOne listHeaderName">
                 @Html.DisplayNameFor(model => model.UniversityName)
             </div>
             <div class="divHLi cellWidthOne listHeaderCourse">
@@ -32,41 +32,41 @@
             <div class="divHLi cellWidthTwo listHeaderUniDesc">
                 @Html.DisplayNameFor(model => model.CourseCoversDescription)
             </div>
-            <div class="divHLi cellWidthThree listHeaderExp">
+            <div class="divHLi cellWidthThree listHeaderUniExp">
                 @Html.DisplayNameFor(model => model.ExperienceGainedDescription)
             </div>
-            <div class="divHLi cellWidthFour listHeaderUniStart">
+            <div class="divHLi cellWidthFour listHeaderStart">
                 @Html.DisplayNameFor(model => model.CourseStartDate)
             </div>
-            <div class="divHLi cellWidthFour listHeaderUniEnd">
+            <div class="divHLi cellWidthFour listHeaderEnd">
                 @Html.DisplayNameFor(model => model.CourseEndDate)
             </div>
-            <div class="divHLi cellWidthFour listHeaderUniDetails">
+            <div class="divHLi cellWidthFour listHeaderDetails">
                 Details
             </div>
         </div>
         <div id="bodyTable">
             @foreach (var item in Model)
             {
-                    <div class="divCLi cellWidthOne listBodyUni">
+                    <div class="divCLi cellWidthOne">
                         @Html.DisplayFor(modelItem => item.UniversityName)
                     </div>
-                    <div class="divCLi cellWidthOne listBodyCourse">
+                    <div class="divCLi cellWidthOne">
                         @Html.DisplayFor(modelItem => item.CourseName)
                     </div>
-                    <div class="divCLi cellWidthTwo listBodyUniDesc">
+                    <div class="divCLi cellWidthTwo">
                         @Html.DisplayFor(modelItem => item.CourseCoversDescription)
                     </div>
-                    <div class="divCLi cellWidthThree listBodyExp">
+                    <div class="divCLi cellWidthThree">
                         @Html.DisplayFor(modelItem => item.ExperienceGainedDescription)
                     </div>
-                    <div class="divCLi cellWidthFour listBodyUniStart">
+                    <div class="divCLi cellWidthFour">
                         @Html.DisplayFor(modelItem => item.CourseStartDate)
                     </div>
-                    <div class="divCLi cellWidthFour listBodyUniEnd">
+                    <div class="divCLi cellWidthFour">
                         @Html.DisplayFor(modelItem => item.CourseEndDate)
                     </div>
-                    <div class="divCLi cellWidthFour listBodyUniDetails">
+                    <div class="divCLi cellWidthFour">
                         @if (SignInManager.IsSignedIn(User))
                         {
                             <a class="tdDetails" asp-action="Details" asp-route-id="@item.Id">View</a>

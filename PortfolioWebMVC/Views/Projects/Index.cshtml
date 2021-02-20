@@ -6,84 +6,79 @@
 @{
     ViewData["Title"] = "Projects List";
 }
-<div class="partialViewGrid">
-    <h1 class="gridIndexH1">List of Projects</h1>
-    <div class="row">
-        <div class="col-md-6">
-            <form class="form-inline" asp-action="ShowSearchResults">
-                <div class="form-group mx-sm-6 mr-2 mb-2">
-                    <label for="SearchPhrase" class="control-label"></label>
-                    <input name="SearchPhrase" class="form-control placeHolderText" placeholder="Search description keywords..." />
-                </div>
-                <div class="form-group mb-2">
-                    <input type="submit" value="Search" class="myBtnSearch" />
-                    @if (SignInManager.IsSignedIn(User))
-                    {
-                        <a class="myBtnAdd ml-2" asp-action="Create">Add New Project</a>
-                    }
-                </div>
-            </form>
+<div class="listGrid">
+    <h1 class="listH1">My Projects</h1>
+    <form class="form-inline formGrid" asp-action="ShowSearchResults">
+        <div class="form-group SearchInputField">
+            <label for="SearchPhrase" class="control-label"></label>
+            <input name="SearchPhrase" class="form-control placeHolderText" placeholder="Search description keywords..." />
         </div>
-    </div>
-    <table class="table">
-        <thead>
-            <tr>
-                <th class="thSix boxName">
-                    @Html.DisplayNameFor(model => model.ProjectName)
-                </th>
-                <th class="thOne boxDescription">
-                    @Html.DisplayNameFor(model => model.ProjectDescription)
-                </th>
-                <th class="thOne boxTools">
-                    @Html.DisplayNameFor(model => model.FrameworkToolsDescription)
-                </th>
-                <th class="thFive boxGH">
-                    @Html.DisplayNameFor(model => model.GitHubLink)
-                </th>
-                <th class="thSix boxWebLink">
-                    @Html.DisplayNameFor(model => model.DeployedLink)
-                </th>
-                <th>Details</th>
-            </tr>
-        </thead>
-        <tbody>
+        <div class="form-group searchInputBtn">
+            <input type="submit" value="Search" class="myBtnSearch" />
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <a class="myBtnAdd createListBtn" asp-action="Create">Add New Project</a>
+            }
+        </div>
+    </form>
+
+    <div id="divTableTwo">
+        <div id="headerTableTwo">
+            <div class="divHLi cellWidthOne listHeaderName">
+                @Html.DisplayNameFor(model => model.ProjectName)
+            </div>
+            <div class="divHLi cellWidthThree listHeaderDescription">
+                @Html.DisplayNameFor(model => model.ProjectDescription)
+            </div>
+            <div class="divHLi cellWidthTwo listHeaderExp">
+                @Html.DisplayNameFor(model => model.FrameworkToolsDescription)
+            </div>
+            <div class="divHLi cellWidthFour listHeaderStartTwo">
+                @Html.DisplayNameFor(model => model.GitHubLink)
+            </div>
+            <div class="divHLi cellWidthFour listHeaderEndTwo">
+                @Html.DisplayNameFor(model => model.DeployedLink)
+            </div>
+            <div class="divHLi cellWidthFour listHeaderDetailsTwo">
+                Details
+            </div>
+        </div>
+
+        <div id="bodyTableTwo">
             @foreach (var item in Model)
             {
-                <tr>
-                    <td class="tdSix boxName">
-                        @Html.DisplayFor(modelItem => item.ProjectName)
-                    </td>
-                    <td class="tdOne boxDescription">
-                        @Html.DisplayFor(modelItem => item.ProjectDescription)
-                    </td>
-                    <td class="tdOne boxTools">
-                        @Html.DisplayFor(modelItem => item.FrameworkToolsDescription)
-                    </td>
-                    <td class="tdFive boxGitHub">
-                        <a class="" href=@Html.DisplayFor(modelItem => item.GitHubLink) target="blank" aria-label="GitHub link">
-                            <img class="linkIcon" src="/img/github24.png" alt="GitHub link">
-                        </a>
-                    </td>
-                    <td class="tdSix boxWebLink">
-                        <a class="" href=@Html.DisplayFor(modelItem => item.DeployedLink) target="blank" aria-label="Project link">
-                            <img class="linkIcon" src="/img/external_link24.png" alt="Project link">
-                        </a>
-                    </td>
-
-                    <td class="boxDetails">
-                        @if (SignInManager.IsSignedIn(User))
-                        {
-                            <a class="tdDetails aView aViewEditDel" asp-action="Details" asp-route-id="@item.Id">View</a>
-                            <a class="tdDetails aEdit aViewEditDel" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                            <a class="tdDetails aDel aViewEditDel" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                        }
-                        else
-                        {
-                            <a class="tdDetails aView aViewEditDel" asp-action="Details" asp-route-id="@item.Id">View</a>
-                        }
-                    </td>
-                </tr>
+                <div class="divCLi cellWidthOne">
+                    @Html.DisplayFor(modelItem => item.ProjectName)
+                </div>
+                <div class="divCLi cellWidthThree">
+                    @Html.DisplayFor(modelItem => item.ProjectDescription)
+                </div>
+                <div class="divCLi cellWidthTwo">
+                    @Html.DisplayFor(modelItem => item.FrameworkToolsDescription)
+                </div>
+                <div class="divCLi cellWidthFour boxGitHub">
+                    <a class="" href=@Html.DisplayFor(modelItem => item.GitHubLink) target="blank" aria-label="GitHub link">
+                        <img class="linkIcon" src="/img/github24.png" alt="GitHub link">
+                    </a>
+                </div>
+                <div class="divCLi cellWidthFour boxWebLink">
+                    <a class="" href=@Html.DisplayFor(modelItem => item.DeployedLink) target="blank" aria-label="Project link">
+                        <img class="linkIcon" src="/img/external_link24.png" alt="Project link">
+                    </a>
+                </div>
+                <div class="divCLi cellWidthFour">
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <a class="tdDetails" asp-action="Details" asp-route-id="@item.Id">View</a>
+                        <a class="tdDetails" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                        <a class="tdDetails" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    }
+                    else
+                    {
+                        <a class="tdDetails" asp-action="Details" asp-route-id="@item.Id">View</a>
+                    }
+                </div>
             }
-        </tbody>
-    </table>
+        </div>
+    </div>
 </div>

@@ -353,6 +353,11 @@ th {
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: auto;
 }
+.listGridTwo {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+}
 .listH1 {
     grid-column: 1/5;
     grid-row: 1/1;
@@ -381,22 +386,33 @@ th {
     grid-row: auto;
     grid-column: 1/8;
 }
+#divTableTwo {
+    grid-row: auto;
+    grid-column: 1/7;
+}
+#headerTable,
+#headerTableTwo {
+    font-family: 'Montserrat Subrayada', sans-serif;
+    border-bottom: 2px solid #fde5a9;
+    font-size: 1.1rem;
+}
 #headerTable,
 #bodyTable {
     grid-template-columns: repeat(7, 1fr);
 }
+#headerTableTwo,
+#bodyTableTwo {
+    grid-template-columns: repeat(6, 1fr);
+}
 #headerTable,
-#bodyTable{
+#bodyTable,
+#headerTableTwo,
+#bodyTableTwo {
     display: grid;
     color: #00293f;
     padding: 10px;
     text-align: left;
     min-width: 125px;
-}
-#headerTable {
-    font-family: 'Montserrat Subrayada', sans-serif;
-    border-bottom: 2px solid #fde5a9;
-    font-size: 1.1rem;
 }
 #bodyTable {
     font-size: .95rem;
@@ -409,18 +425,20 @@ th {
     border-bottom: 1px solid #fde5a9;
 }
 .cellWidthOne {
-    width: 130px;
+    min-width: 130px;
 }
 .cellWidthTwo {
-    width: 350px;
+    max-width: 350px;
+    min-width: 250px;
 }
 .cellWidthThree {
-    width: 750px;
+    max-width: 750px;
+    min-width: 470px;
 }
 .cellWidthFour {
-    width: 120px;
+    min-width: 120px;
 }
-.listHeaderUni {
+.listHeaderName {
     grid-row: 1/1;
     grid-column: 1/1;
 }
@@ -432,21 +450,45 @@ th {
     grid-row: 1/1;
     grid-column: 3/3;
 }
+.listHeaderDescription {
+    grid-row: 1/1;
+    grid-column: 2/2;
+}
+.listHeaderUniExp {
+    grid-row: 1/1;
+    grid-column: 4/4;
+}
 .listHeaderExp {
     grid-row: 1/1;
     grid-column: 4/4;
 }
-.listHeaderUniStart {
+.listHeaderExp {
+    grid-row: 1/1;
+    grid-column: 3/3;
+}
+.listHeaderStart {
     grid-row: 1/1;
     grid-column: 5/5;
 }
-.listHeaderUniEnd {
+.listHeaderStartTwo {
+    grid-row: 1/1;
+    grid-column: 4/4;
+}
+.listHeaderEnd {
     grid-row: 1/1;
     grid-column: 6/6;
 }
-.listHeaderUniDetails {
+.listHeaderEndTwo {
+    grid-row: 1/1;
+    grid-column: 5/5;
+}
+.listHeaderDetails {
     grid-row: 1/1;
     grid-column: 7/7;
+}
+.listHeaderDetailsTwo {
+    grid-row: 1/1;
+    grid-column: 6/6;
 }
 
 #bodyRowTable {
