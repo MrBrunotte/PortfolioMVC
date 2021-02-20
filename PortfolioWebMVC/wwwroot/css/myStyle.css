@@ -1,4 +1,7 @@
 ﻿/******** Elements ********/
+html {
+    font-size: 14px;
+}
 body {
     /*background-image: url(/img/anonymous.jpg);
     background-repeat: no-repeat;
@@ -11,10 +14,10 @@ a {
     color: black;
 }
 
-    a:hover {
-        text-decoration: none;
-        color: black;
-    }
+a:hover {
+    text-decoration: none;
+    color: black;
+}
 
 main {
     width: 90%;
@@ -69,6 +72,7 @@ nav {
 .myBtnSearch {
     width: 90px;
     padding: 0 14px;
+    margin-right: 20px;
 }
 
 .myBtnAdd {
@@ -117,16 +121,17 @@ nav {
 .placeHolderText {
     font-style: italic !important;
     color: #00293f !important;
+    width: 245px !important;
 }
 
 .form-control::placeholder {
     color: #00293f;
     opacity: 1;
 }
-/******** Table & Form Setup *********/
-.boxName {
-min-width: 162px;
 
+/******** Old Table & Form Setup *********/
+.boxName {
+    min-width: 162px;
 }
 .boxDescription {
     min-width: 390px;
@@ -340,6 +345,125 @@ th {
     grid-row: 4/4;
     text-align: right;
 }
+/********INDEX Grid for Academic, Work and Projects *******/
+
+/** List header and search Academic, work and projects**/
+.listGrid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: auto;
+}
+.listH1 {
+    grid-column: 1/5;
+    grid-row: 1/1;
+    margin: 30px 0;
+    font-family: 'Montserrat Subrayada', sans-serif;
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row: 2/2;
+    grid-column: 1/4;
+}
+
+.SearchInputField {
+    grid-row: 1/1;
+    grid-column: 1/1;
+}
+
+.searchInputBtn {
+    grid-row: 1/1;
+    grid-column: 2/2;
+}
+/******** INDEX Academics 7 columns *********/
+#divTable {
+    grid-row: auto;
+    grid-column: 1/8;
+}
+#headerTable,
+#bodyTable {
+    grid-template-columns: repeat(7, 1fr);
+}
+#headerTable,
+#bodyTable{
+    display: grid;
+    color: #00293f;
+    padding: 10px;
+    text-align: left;
+    min-width: 125px;
+}
+#headerTable {
+    font-family: 'Montserrat Subrayada', sans-serif;
+    border-bottom: 2px solid #fde5a9;
+    font-size: 1.1rem;
+}
+#bodyTable {
+    font-size: .95rem;
+}
+.divHLi,
+.divCLi {
+    padding: 10px;
+}
+.divCLi {
+    border-bottom: 1px solid #fde5a9;
+}
+.cellWidthOne {
+    width: 130px;
+}
+.cellWidthTwo {
+    width: 350px;
+}
+.cellWidthThree {
+    width: 750px;
+}
+.cellWidthFour {
+    width: 120px;
+}
+.listHeaderUni {
+    grid-row: 1/1;
+    grid-column: 1/1;
+}
+.listHeaderCourse {
+    grid-row: 1/1;
+    grid-column: 2/2;
+}
+.listHeaderUniDesc {
+    grid-row: 1/1;
+    grid-column: 3/3;
+}
+.listHeaderExp {
+    grid-row: 1/1;
+    grid-column: 4/4;
+}
+.listHeaderUniStart {
+    grid-row: 1/1;
+    grid-column: 5/5;
+}
+.listHeaderUniEnd {
+    grid-row: 1/1;
+    grid-column: 6/6;
+}
+.listHeaderUniDetails {
+    grid-row: 1/1;
+    grid-column: 7/7;
+}
+
+#bodyRowTable {
+    display: table-row;
+}
+/******** INDEX projects and work 6 columns *********/
+
+
+/********DETAILS and DELETE Grid for Academic, Work and Projects *******/
+
+
+/******** DETAILS and DELETE projects and work 7 columns *********/
+
+
+/******** DETAILS and DELETE projects and work 6 columns *********/
+
+
 
 /******** Contact *******/
 .myContactContainer {
@@ -416,24 +540,8 @@ th {
 
 /******** Media Queries *******/
 
-@media (max-width: 991px) {
-    .gallaryGrid {
-        width: 100%;
-        display: grid;
-        grid-auto-flow: dense;
-        grid-template: "1fr 1fr 1fr" 250px "1fr 1fr 1fr" 250px "1fr 1fr 1fr" 250px "1fr 1fr 1fr" 250px "1fr 1fr 1fr" 250px;
+@media screen and (max-width: 800px) {
+    #masterDivTable {
+        width: 90%
     }
-}
-
-@media (max-width: 768px) {
-    .gallaryGrid {
-        width: 100%;
-        display: grid;
-        grid-auto-flow: dense;
-        grid-template: "1fr 1fr" 200px "1fr 1fr" 200px "1fr 1fr" 200px "1fr 1fr" 200px "1fr 1fr" 200px "1fr 1fr" 200px "1fr 1fr" 200px;
-    }
-
-        .gallaryGrid .box.h {
-            grid-column: span 1;
-        }
 }

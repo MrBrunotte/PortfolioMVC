@@ -6,72 +6,67 @@
 @{
     ViewData["Title"] = "Academics List";
 }
-<div class="partialViewGrid">
-    <h1 class="gridIndexH1">Academic Qualifications</h1>
-    <div class="row">
-        <div class="col-md-6">
-            <form class="form-inline" asp-action="ShowSearchResults">
-                <div class="form-group mx-sm-6 mr-2 mb-2">
+<div class="listGrid">
+    <h1 class="listH1">Academic Qualifications</h1>
+            <form class="form-inline formGrid" asp-action="ShowSearchResults">
+                <div class="form-group SearchInputField">
                     <label for="SearchPhrase" class="control-label"></label>
                     <input name="SearchPhrase" class="form-control placeHolderText" placeholder="Search description keywords..." />
                 </div>
-                <div class="form-group mb-2">
+                <div class="form-group searchInputBtn">
                     <input type="submit" value="Search" class="myBtnSearch" />
                     @if (SignInManager.IsSignedIn(User))
                     {
-                        <a class="myBtnAdd ml-2" asp-action="Create">Add New Course</a>
+                        <a class="myBtnAdd createListBtn" asp-action="Create">Add New Course</a>
                     }
                 </div>
             </form>
+    <div id="divTable">
+        <div id="headerTable">
+            <div class="divHLi cellWidthOne listHeaderUni">
+                @Html.DisplayNameFor(model => model.UniversityName)
+            </div>
+            <div class="divHLi cellWidthOne listHeaderCourse">
+                @Html.DisplayNameFor(model => model.CourseName)
+            </div>
+            <div class="divHLi cellWidthTwo listHeaderUniDesc">
+                @Html.DisplayNameFor(model => model.CourseCoversDescription)
+            </div>
+            <div class="divHLi cellWidthThree listHeaderExp">
+                @Html.DisplayNameFor(model => model.ExperienceGainedDescription)
+            </div>
+            <div class="divHLi cellWidthFour listHeaderUniStart">
+                @Html.DisplayNameFor(model => model.CourseStartDate)
+            </div>
+            <div class="divHLi cellWidthFour listHeaderUniEnd">
+                @Html.DisplayNameFor(model => model.CourseEndDate)
+            </div>
+            <div class="divHLi cellWidthFour listHeaderUniDetails">
+                Details
+            </div>
         </div>
-    </div>
-    <table class="table">
-        <thead class="tHeader">
-            <tr>
-                <th class="thOne">
-                    @Html.DisplayNameFor(model => model.UniversityName)
-                </th>
-                <th class="thTwo">
-                    @Html.DisplayNameFor(model => model.CourseName)
-                </th>
-                <th class="thThree">
-                    @Html.DisplayNameFor(model => model.CourseCoversDescription)
-                </th>
-                <th class="thFour">
-                    @Html.DisplayNameFor(model => model.ExperienceGainedDescription)
-                </th>
-                <th class="thFive">
-                    @Html.DisplayNameFor(model => model.CourseStartDate)
-                </th>
-                <th class="thSix">
-                    @Html.DisplayNameFor(model => model.CourseEndDate)
-                </th>
-                <th class="gridHeaderSeven">Details</th>
-            </tr>
-        </thead>
-        <tbody class="tHeader">
+        <div id="bodyTable">
             @foreach (var item in Model)
             {
-                <tr>
-                    <td class="tdOne">
+                    <div class="divCLi cellWidthOne listBodyUni">
                         @Html.DisplayFor(modelItem => item.UniversityName)
-                    </td>
-                    <td class="tdTwo">
+                    </div>
+                    <div class="divCLi cellWidthOne listBodyCourse">
                         @Html.DisplayFor(modelItem => item.CourseName)
-                    </td>
-                    <td class="tdThree">
+                    </div>
+                    <div class="divCLi cellWidthTwo listBodyUniDesc">
                         @Html.DisplayFor(modelItem => item.CourseCoversDescription)
-                    </td>
-                    <td class="tdFour">
+                    </div>
+                    <div class="divCLi cellWidthThree listBodyExp">
                         @Html.DisplayFor(modelItem => item.ExperienceGainedDescription)
-                    </td>
-                    <td class="tdFive">
+                    </div>
+                    <div class="divCLi cellWidthFour listBodyUniStart">
                         @Html.DisplayFor(modelItem => item.CourseStartDate)
-                    </td>
-                    <td class="tdSix">
+                    </div>
+                    <div class="divCLi cellWidthFour listBodyUniEnd">
                         @Html.DisplayFor(modelItem => item.CourseEndDate)
-                    </td>
-                    <td class="tdSeven">
+                    </div>
+                    <div class="divCLi cellWidthFour listBodyUniDetails">
                         @if (SignInManager.IsSignedIn(User))
                         {
                             <a class="tdDetails" asp-action="Details" asp-route-id="@item.Id">View</a>
@@ -82,9 +77,8 @@
                         {
                             <a class="tdDetails" asp-action="Details" asp-route-id="@item.Id">View</a>
                         }
-                    </td>
-                </tr>
+                    </div>
             }
-        </tbody>
-    </table>
+        </div>
+    </div>
 </div>
