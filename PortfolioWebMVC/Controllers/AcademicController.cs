@@ -23,6 +23,7 @@ namespace PortfolioWebMVC.Controllers
         // GET: Academic
         public async Task<IActionResult> Index()
         {
+           
             return View(await _context.AcademicViewModel.ToListAsync());
         }
 

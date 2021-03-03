@@ -37,6 +37,7 @@
             </div>
             <div class="divHLi cellWidthFour listHeaderStart">
                 @Html.DisplayNameFor(model => model.CourseStartDate)
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.StartDateParam"> - Sort</a>
             </div>
             <div class="divHLi cellWidthFour listHeaderEnd">
                 @Html.DisplayNameFor(model => model.CourseEndDate)
